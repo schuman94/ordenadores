@@ -4,6 +4,7 @@
 //use Illuminate\Support\Facades\DB;
 
 use App\Http\Controllers\AulaController;
+use App\Http\Controllers\DispositivoController;
 use App\Http\Controllers\OrdenadorController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,7 @@ Route::resource('ordenadores', OrdenadorController::class)->parameters([
 ]);
 
 Route::resource('aulas', AulaController::class);
+Route::resource('dispositivos', DispositivoController::class);
 
 //  Route::get('alumnos/criterios/{alumno}', [AlumnoController::class, 'criterios'])->name('alumnos.criterios');
 

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Aulas
+            Dispositivos
         </h2>
     </x-slot>
 
@@ -22,7 +22,7 @@
                                             Nombre
                                         </th>
                                         <th scope="col" class="px-6 py-3">
-                                            Nº dispositivos
+                                            Colocado
                                         </th>
                                         <th colspan="3" scope="col" class="px-6 py-3">
                                             Acciones
@@ -30,26 +30,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($aulas as $aula)
+                                    @foreach ($dispositivos as $dispositivo)
                                         <tr
                                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                <a href="{{ route('aulas.show', $aula) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                                    {{ $aula->codigo }}
+                                                <a href="{{ route('dispositivos.show', $dispositivo) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                                    {{ $dispositivo->codigo }}
                                                 </a>
                                             </th>
                                             <td class="px-6 py-4">
-                                                {{ $aula->nombre }}
+                                                {{ $dispositivo->nombre }}
                                             </td>
                                             <td class="px-6 py-4">
-                                                {{ $aula->dispositivos()->count(); }}
+                                                {{ $dispositivo->colocable->codigo }}
                                             </td>
                                             <td class="px-6 py-4 flex items-center gap-2">
-                                                <a href="{{ route('aulas.edit', $aula) }}"
+                                                <a href="{{ route('dispositivos.edit', $dispositivo) }}"
                                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                                     Editar
                                                 </a>
-                                                <form method="POST" action="{{ route('aulas.destroy', $aula) }}">
+                                                <form method="POST" action="{{ route('dispositivos.destroy', $dispositivo) }}">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit"
@@ -65,9 +65,9 @@
                             </table>
                         </div>
                         <div class="mt-6 text-center">
-                            <a href="{{ route('aulas.create') }}"
+                            <a href="{{ route('dispositivos.create') }}"
                                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                Crear una nueva aula
+                                Crear una nueva dispositivo
                             </a>
                         </div>
 

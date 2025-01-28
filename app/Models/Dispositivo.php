@@ -10,6 +10,8 @@ class Dispositivo extends Model
     /** @use HasFactory<\Database\Factories\DispositivoFactory> */
     use HasFactory;
 
+    protected $fillable = ['codigo', 'nombre', 'colocable_id', 'colocable_type'];
+
     public function colocable() {
         return $this->morphTo();
     }
