@@ -86,6 +86,9 @@
                     </div>
                 </div>
             </div>
+            <div class="mt-4">
+                {{ $ordenadores->links() }}
+            </div>
         </div>
     </div>
 </x-app-layout>

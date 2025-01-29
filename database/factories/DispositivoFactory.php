@@ -17,7 +17,13 @@ class DispositivoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'codigo' => fake()->unique()->bothify('DISP-??-####'),
+            'nombre' => fake()->word(),
+            'colocable_id' => rand(1, 5),
+            'colocable_type' => fake()->randomElement([
+                'App\Models\Ordenador',
+                'App\Models\Aula'
+            ]),
         ];
     }
 }

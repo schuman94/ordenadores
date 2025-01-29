@@ -17,7 +17,10 @@ class OrdenadorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'codigo' => fake()->unique()->bothify('??###'),
+            'marca' => fake()->word(),
+            'modelo' => fake()->bothify('???-#'),
+            'aula_id' => rand(1, 5),
         ];
     }
 }

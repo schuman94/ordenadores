@@ -18,7 +18,7 @@ class OrdenadorController extends Controller
     public function index()
     {
         return view('ordenadores.index', [
-            'ordenadores' => Ordenador::all(),
+            'ordenadores' => Ordenador::paginate(10),
         ]);
     }
 

@@ -17,7 +17,8 @@ class AulaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'codigo' => fake()->unique()->bothify('A##'),
+            'nombre' => fake()->word(),
         ];
     }
 }
