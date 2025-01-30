@@ -20,7 +20,7 @@ class OrdenadorFactory extends Factory
             'codigo' => fake()->unique()->bothify('??###'),
             'marca' => fake()->word(),
             'modelo' => fake()->bothify('???-#'),
-            'aula_id' => rand(1, 5), // Aula::first()->id
+            'aula_id' => rand(1, 5), // Aula::all()->suffle()-first()->id
         ];
     }
 }
